@@ -1,0 +1,47 @@
+{
+  "Contracts/WethinkCode.sol": {
+    "__sources__": {
+      "Contracts/WethinkCode.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.20;\r\n\r\ncontract Students{\r\n    \r\n}\r\n",
+        "file": "Contracts/WethinkCode.sol"
+      }
+    }
+  },
+  "Contracts/ABC.sol": {
+    "__sources__": {
+      "Contracts/ABC.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.20;\r\n\r\n",
+        "file": "Contracts/ABC.sol"
+      }
+    }
+  },
+  "Contracts/ABCStudentRanks.sol": {
+    "__sources__": {
+      "Contracts/ABCStudentRanks.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n",
+        "file": "Contracts/ABCStudentRanks.sol"
+      }
+    }
+  },
+  "Contracts/WeThinkCodeStudents.sol": {
+    "__sources__": {
+      "Contracts/WeThinkCodeStudents.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract WeThinkCodeStudents {\r\n\r\n    address public admin;\r\n\r\n    struct Student {\r\n        string name;\r\n        uint marks;\r\n        bool isWeThinkCode;\r\n        bool isABC;\r\n    }\r\n\r\n    // Mapping to store student details using address as the key\r\n    mapping(address => Student) public students;\r\n\r\n    // Modifier to restrict access to admin\r\n    modifier onlyAdmin() {\r\n        require(msg.sender == admin, \"Only admin can perform this action\");\r\n        _;\r\n    }\r\n\r\n    // Constructor to set the deployer as admin\r\n    constructor() {\r\n        admin = msg.sender;\r\n    }\r\n\r\n    // Function to enroll a student in WeThinkCode or ABC\r\n    function enrollStudent(address studentAddress, string memory name, bool isWeThinkCode, bool isABC) public onlyAdmin {\r\n        students[studentAddress] = Student(name, 0, isWeThinkCode, isABC);\r\n    }\r\n\r\n    // Function to set marks for a student\r\n    function setMarks(address studentAddress, uint marks) public onlyAdmin {\r\n        require(bytes(students[studentAddress].name).length != 0, \"Student not enrolled\");\r\n        students[studentAddress].marks = marks;\r\n    }\r\n\r\n    // Function to retrieve marks for a student\r\n    function getMarks(address studentAddress) public view returns (uint) {\r\n        return students[studentAddress].marks;\r\n    }\r\n\r\n    // Function to check enrollment\r\n    function checkEnrollment(address studentAddress) public view returns (string memory) {\r\n        if (students[studentAddress].isWeThinkCode && students[studentAddress].isABC) {\r\n            return \"WeThinkCode and ABC\";\r\n        } else if (students[studentAddress].isWeThinkCode) {\r\n            return \"WeThinkCode only\";\r\n        } else if (students[studentAddress].isABC) {\r\n            return \"ABC only\";\r\n        } else {\r\n            return \"Not enrolled\";\r\n        }\r\n    }\r\n}",
+        "file": "Contracts/WeThinkCodeStudents.sol"
+      }
+    }
+  },
+  "Contracts/Inherit.sol": {
+    "Contracts/Schools.sol": "Contracts/Schools.sol",
+    "__sources__": {
+      "Contracts/Inherit.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\nimport \"Contracts/Schools.sol\";\r\n\r\ncontract GetSchholNames{\r\n    School externalContract;\r\n\r\n    constructor(address _externalSchoolName){\r\n        externalContract = School(_externalSchoolName);\r\n    }\r\n\r\n    function callgetSchoolName() public view returns (string memory){\r\n        return externalContract.getSchoolName();\r\n    }\r\n}",
+        "file": "Contracts/Inherit.sol"
+      },
+      "Contracts/Schools.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n// For WE Think Code retrieve the marks of students and ABC retrieve student ranks from Junior, Intermediate and Senior.\r\n\r\ncontract School {\r\n    string public schoolName;\r\n\r\n    constructor(string memory _name) {\r\n        schoolName = _name;\r\n    }\r\n\r\n    function getSchoolName() public view returns (string memory) {\r\n        return schoolName;\r\n    }\r\n}\r\n\r\ncontract StudentsSystem is School {\r\n\r\n    struct Student {\r\n        string name;\r\n        uint mathGrade;\r\n        uint scienceGrade;\r\n    }\r\n\r\n    mapping(uint => Student) public students;\r\n\r\n    constructor(string memory _schoolName) School(_schoolName) {\r\n        \r\n    }\r\n\r\n    function addStudent(uint _id, string calldata _name, uint _mathGrade, uint _scienceGrade) public {\r\n        students[_id] = Student(_name, _mathGrade, _scienceGrade);\r\n    }\r\n\r\n    function getStudent(uint _id) public view returns (string memory, uint, uint) {\r\n        Student memory s = students[_id];\r\n        return (s.name, s.mathGrade, s.scienceGrade);\r\n    }\r\n}\r\n\r\n\r\ncontract AdminControl {\r\n    address public admin;\r\n\r\n    constructor() {\r\n        admin = msg.sender;\r\n    }\r\n\r\n    modifier onlyAdmin() {\r\n        require(msg.sender == admin, \"Not admin\");\r\n        _;\r\n    }\r\n\r\n    function changeAdmin(address _newAdmin) public onlyAdmin {\r\n        admin = _newAdmin;\r\n    }\r\n}\r\n\r\n\r\ncontract FullSchoolSystem is StudentsSystem, AdminControl {\r\n\r\n    constructor(string memory _schoolName) \r\n        StudentsSystem(_schoolName) \r\n        AdminControl() {    \r\n    }\r\n\r\n    function getFullDetails(uint _id) public view returns (string memory, \r\n        uint, uint, string memory, address) {\r\n        (string memory name, uint mathGrade, uint scienceGrade) = getStudent(_id);\r\n        return (name, mathGrade, scienceGrade, getSchoolName(), admin);\r\n    }\r\n}\r\n",
+        "file": "Contracts/Schools.sol"
+      }
+    }
+  }
+}
