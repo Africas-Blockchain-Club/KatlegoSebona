@@ -1,0 +1,78 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_externalSchoolName",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "callgetSchoolName",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Contracts/Inherit.sol": "GetSchholNames"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Contracts/Inherit.sol": {
+			"keccak256": "0x316cd339b834076a0673c991ba92e0d7b4001e5a3250dcf980e6c2b2b6831068",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://75692c73dfaebfca32aea5ad7552d2ae6ecbf69e919ef46d479a67b44f0019ac",
+				"dweb:/ipfs/QmZqSVisbEvir7hNPr7upHpqFbzUVmPqHqrkek9FiXXUuc"
+			]
+		},
+		"Contracts/Schools.sol": {
+			"keccak256": "0xe797ad547536a7e88966adee77cc69c4c8f58c542a3edca0a0593f42150eef3f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b70f2a8fac7e6751c250f641864c523863936ae8b2b296275f0b5d21ba3f41d6",
+				"dweb:/ipfs/QmP5eJ6H1gRHxTnhjGxHkEBNTdJA7rRE9LgNmRoqkGYyuY"
+			]
+		}
+	},
+	"version": 1
+}
