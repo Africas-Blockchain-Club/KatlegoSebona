@@ -1,0 +1,140 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_wtcAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_abcAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "abcContract",
+				"outputs": [
+					{
+						"internalType": "contract ABCStudentRanks",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "studentAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "marks",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum ABCStudentRanks.Rank",
+						"name": "rank",
+						"type": "uint8"
+					}
+				],
+				"name": "setStudentMarksAndRank",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "wtcContract",
+				"outputs": [
+					{
+						"internalType": "contract WeThinkCodeStudents",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Contracts/Inherit.sol": "SchoolManager"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Contracts/ABCStudentRanks.sol": {
+			"keccak256": "0xe9b151effabbbdba5c654aba59d680b2d57929c2cc639065ac02d6afeab998d7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://245f770fd83360ed5a130fa7f041160eec12085ae79a1efe08b2641b1acb0cf1",
+				"dweb:/ipfs/QmRpoLyF5ecp7PvDjqo16irU1Xsw88kBLR7aQcmf4Cxc2C"
+			]
+		},
+		"Contracts/Inherit.sol": {
+			"keccak256": "0x4acf6fa5b506518fed63e629fcacac2629f9d46676b8a21396cfcae50564ee6b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a559d4b29948b944ef045745e24b54d390ac346f67ab69d8d5f21a3dc3063f06",
+				"dweb:/ipfs/QmSy5etskX3XWB9YfBSF6mp1TRATkFgB9eStcf2wASagJH"
+			]
+		},
+		"Contracts/WeThinkCodeStudents.sol": {
+			"keccak256": "0xad43e68df464445aa53372fae41e892bb03c367153f65202ff99bf948db24058",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9a3debdadda6ba40312d7c3039fcad75ce8ed6b950d7b5761e4f74eb12a7f255",
+				"dweb:/ipfs/QmcxdHUau5puTFQhWNwK3TLyzUuD4CXm3z6uKmPVYkyjw2"
+			]
+		}
+	},
+	"version": 1
+}

@@ -55,6 +55,11 @@
 						"type": "string"
 					},
 					{
+						"internalType": "enum ABCStudentRanks.Rank",
+						"name": "rank",
+						"type": "uint8"
+					},
+					{
 						"internalType": "bool",
 						"name": "isWeThinkCode",
 						"type": "bool"
@@ -78,12 +83,12 @@
 						"type": "address"
 					}
 				],
-				"name": "getMarks",
+				"name": "getRank",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "enum ABCStudentRanks.Rank",
 						"name": "",
-						"type": "uint256"
+						"type": "uint8"
 					}
 				],
 				"stateMutability": "view",
@@ -97,33 +102,14 @@
 						"type": "address"
 					},
 					{
-						"internalType": "uint256",
-						"name": "marks",
-						"type": "uint256"
+						"internalType": "enum ABCStudentRanks.Rank",
+						"name": "rank",
+						"type": "uint8"
 					}
 				],
-				"name": "setMarks",
+				"name": "setRank",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "studentMarks",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -142,9 +128,9 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
-						"name": "marks",
-						"type": "uint256"
+						"internalType": "enum ABCStudentRanks.Rank",
+						"name": "rank",
+						"type": "uint8"
 					},
 					{
 						"internalType": "bool",
@@ -174,7 +160,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Contracts/WeThinkCodeStudents.sol": "WeThinkCodeStudents"
+			"Contracts/ABCStudentRanks.sol": "ABCStudentRanks"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -188,12 +174,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Contracts/WeThinkCodeStudents.sol": {
-			"keccak256": "0xad43e68df464445aa53372fae41e892bb03c367153f65202ff99bf948db24058",
+		"Contracts/ABCStudentRanks.sol": {
+			"keccak256": "0xe9b151effabbbdba5c654aba59d680b2d57929c2cc639065ac02d6afeab998d7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9a3debdadda6ba40312d7c3039fcad75ce8ed6b950d7b5761e4f74eb12a7f255",
-				"dweb:/ipfs/QmcxdHUau5puTFQhWNwK3TLyzUuD4CXm3z6uKmPVYkyjw2"
+				"bzz-raw://245f770fd83360ed5a130fa7f041160eec12085ae79a1efe08b2641b1acb0cf1",
+				"dweb:/ipfs/QmRpoLyF5ecp7PvDjqo16irU1Xsw88kBLR7aQcmf4Cxc2C"
 			]
 		}
 	},

@@ -115,25 +115,6 @@
 						"type": "address"
 					}
 				],
-				"name": "studentMarks",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
 				"name": "students",
 				"outputs": [
 					{
@@ -189,11 +170,11 @@
 	},
 	"sources": {
 		"Contracts/WeThinkCodeStudents.sol": {
-			"keccak256": "0xad43e68df464445aa53372fae41e892bb03c367153f65202ff99bf948db24058",
+			"keccak256": "0x48ec1fad5bd845c9a7df9a3a9db1350601191c11e155e40ce9ac07ed45f73c07",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9a3debdadda6ba40312d7c3039fcad75ce8ed6b950d7b5761e4f74eb12a7f255",
-				"dweb:/ipfs/QmcxdHUau5puTFQhWNwK3TLyzUuD4CXm3z6uKmPVYkyjw2"
+				"bzz-raw://ba6e56f3eb93a07f2a989a49b368498430c233fe8e5ab4e6f88f7e5c64a18be5",
+				"dweb:/ipfs/QmSY574u5YTnoZeYbKpfXD4igw6hM1yMSGSYjGod9aWwmN"
 			]
 		}
 	},
